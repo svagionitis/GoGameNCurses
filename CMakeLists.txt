@@ -17,13 +17,18 @@ SET(LIBS ${CMAKE_THREAD_LIBS_INIT} ncurses)
 INCLUDE_DIRECTORIES(include)
 
 # Set the source file
-SET(SNAKENCURSES_SRC src/utils.c
+SET(GOGAMENCURSES_SRC src/utils.c
 		     src/header.c
 		     src/footer.c
 		     src/control.c
 		     src/main_win.c
 		     src/main.c)
 
-ADD_EXECUTABLE(gogame ${SNAKENCURSES_SRC})
+ADD_EXECUTABLE(gogame ${GOGAMENCURSES_SRC})
 
 TARGET_LINK_LIBRARIES (gogame ${LIBS})
+
+# Set simple go game, no ncurses
+SET(GOGAMESIMPLE_SRC src/main_simple.c)
+ADD_EXECUTABLE(go ${GOGAMESIMPLE_SRC})
+
